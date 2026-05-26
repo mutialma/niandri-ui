@@ -166,47 +166,7 @@ export default function LoginPage({ onSuccess }: { onSuccess: () => void }) {
             </button>
           </form>
 
-          {/* Demo accounts */}
-          <div style={{
-            marginTop: '1.75rem',
-            background: '#fff',
-            border: '1.5px solid var(--border)',
-            borderRadius: 12, padding: '1rem 1.25rem',
-            boxShadow: 'var(--shadow-sm)',
-          }}>
-            <div style={{ fontSize: '.72rem', fontWeight: 800, color: 'var(--brand)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 8 }}>
-              Demo Akun
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 12px' }}>
-              {[
-                ['superadmin', 'admin123'],
-                ['admin', 'admin123'],
-                ['teknisi', 'teknisi1'],
-                ['agen', 'agen1234'],
-                ['pelanggan', 'user1234'],
-              ].map(([u, p]) => (
-                <button
-                  key={u}
-                  type="button"
-                  onClick={() => { setUsername(u); setPassword(p) }}
-                  style={{
-                    textAlign: 'left', background: 'var(--surface2)',
-                    border: '1px solid var(--border)', borderRadius: 7,
-                    padding: '5px 8px', cursor: 'pointer',
-                    fontSize: '.7rem', color: 'var(--text2)', fontFamily: 'var(--mono)',
-                    transition: 'all .15s',
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--brand)'; (e.currentTarget as HTMLElement).style.color = 'var(--brand-dark)' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLElement).style.color = 'var(--text2)' }}
-                >
-                  {u}
-                </button>
-              ))}
-            </div>
-            <div style={{ fontSize: '.67rem', color: 'var(--subtle)', marginTop: 8 }}>
-              Klik akun untuk mengisi otomatis
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
