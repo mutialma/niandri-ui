@@ -158,7 +158,7 @@ function TagihanManual() {
         headers={['No.','Pelanggan','Deskripsi','Jumlah','Jatuh Tempo','Status']}
         rows={[
           ['TGH-001','PT Maju Jaya','Biaya Instalasi Tambahan',<span key="j" style={{fontFamily:'monospace',color:L.brand,fontWeight:700}}>Rp 500.000</span>,'10 Mei 2025',<Badge key="s" color="amber">Belum</Badge>],
-          ['TGH-002','Sari Dewi',   'Penggantian Kabel Drop',  <span key="j" style={{fontFamily:'monospace',color:L.green,fontWeight:700}}>Rp 75.000</span>,'01 Mei 2025', <Badge key="s" color="green">Lunas</Badge>],
+          ['TGH-002','Sari Dewi',   'Penggantian Kabel Drop', <span key="j" style={{fontFamily:'monospace',color:'#16A34A',fontWeight:700}}>Rp 75.000</span>,'01 Mei 2025', <Badge key="s" color="green">Lunas</Badge>],
         ]}
       />
       {showModal && (
