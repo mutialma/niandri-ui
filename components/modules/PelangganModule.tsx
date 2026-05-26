@@ -5,7 +5,7 @@ const C = {
   orange:'#F97316',orangeDark:'#EA580C',orangeLight:'#FFEDD5',orangeDim:'#FFF7ED',
   green:'#16A34A',greenLight:'#DCFCE7',blue:'#2563EB',blueLight:'#DBEAFE',
   red:'#DC2626',redLight:'#FEE2E2',amber:'#D97706',amberLight:'#FEF3C7',
-  teal:'#0D9488',tealLight:'#CCFBF1',purple:'#7C3AED',purpleLight:'#EDE9FE',
+  teal:'#0D9488',tealLight:'#CCFBF1',
   text:'#1C1107',muted:'#78716C',subtle:'#A8A29E',border:'#EDE9E3',bg:'#F8F7F4',
 }
 
@@ -248,7 +248,7 @@ export default function PelangganModule() {
                     </span>
                   </td>
                   <td><span style={{ fontFamily: 'var(--mono)', fontWeight: 700, color: C.green, fontSize: '.8rem' }}>Rp {p.harga.toLocaleString('id-ID')}</span></td>
-                  <td><span style={{ fontFamily: 'var(--mono)', fontSize: '.75rem', fontWeight: 700, color: C.purple ?? '#7C3AED' }}>{p.kode}</span></td>
+                  <td><span style={{ fontFamily: 'var(--mono)', fontSize: '.75rem', fontWeight: 700, color: '#7C3AED' }}>{p.kode}</span></td>
                   <td>
                     <span style={{
                       fontSize: '.7rem', fontWeight: 700, padding: '3px 9px', borderRadius: 100,
