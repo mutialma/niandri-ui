@@ -210,27 +210,42 @@ export default function PelangganModule() {
                 <tr key={p.id}>
                   <td style={{ color: C.subtle, fontFamily: 'var(--mono)', fontSize: '.75rem' }}>{i + 1}</td>
                   <td>
-                    <div style={{ display: 'flex', gap: 4 }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
                       {[
-                        { icon: '✏️', color: C.blue,   bg: C.blueLight,  title: 'Edit' },
-                        { icon: '👁', color: C.teal,   bg: C.tealLight,  title: 'Detail' },
-                        { icon: '🧾', color: C.green,  bg: C.greenLight, title: 'Invoice' },
-                        { icon: '💬', color: C.green,  bg: '#DCFCE7',    title: 'WA' },
+                        { icon: '✏️', bg: '#16A34A', title: 'Edit Data' },
+                        { icon: '⏻',  bg: '#DC2626', title: 'Nonaktifkan', svg: true },
+                        { icon: '↺',  bg: '#0D9488', title: 'Histori Pembayaran', svg: true },
+                        { icon: '💵', bg: '#16A34A', title: 'Input Bayar' },
                       ].map(a => (
                         <button
                           key={a.title}
                           title={a.title}
-                          onClick={a.title === 'Detail' ? () => setShowDetail(p) : undefined}
+                          onClick={a.title === 'Edit Data' ? () => setShowDetail(p) : undefined}
                           style={{
-                            width: 26, height: 26, borderRadius: 6,
-                            background: a.bg, border: `1px solid ${a.color}33`,
-                            cursor: 'pointer', fontSize: '.75rem',
+                            width: 28, height: 28, borderRadius: 7,
+                            background: a.bg,
+                            border: 'none',
+                            cursor: 'pointer', fontSize: a.svg ? '1rem' : '.8rem',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            color: '#fff', fontWeight: 700,
                             transition: 'all .15s',
+                            boxShadow: `0 2px 6px ${a.bg}55`,
                           }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)' }}
-                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = '' }}
-                        >{a.icon}</button>
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.08)'; (e.currentTarget as HTMLElement).style.filter = 'brightness(1.1)' }}
+                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ''; (e.currentTarget as HTMLElement).style.filter = '' }}
+                        >
+                          {a.title === 'Nonaktifkan' ? (
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M18.36 6.64a9 9 0 1 1-12.73 0"/>
+                              <line x1="12" y1="2" x2="12" y2="12"/>
+                            </svg>
+                          ) : a.title === 'Histori Pembayaran' ? (
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="1 4 1 10 7 10"/>
+                              <path d="M3.51 15a9 9 0 1 0 .49-3.45"/>
+                            </svg>
+                          ) : a.icon}
+                        </button>
                       ))}
                     </div>
                   </td>
