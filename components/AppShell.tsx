@@ -12,6 +12,7 @@ import TransaksiModule   from '@/components/modules/TransaksiModule'
 import LaporanModule     from '@/components/modules/LaporanModule'
 import VoucherModule     from '@/components/modules/VoucherModule'
 import CorporateModule   from '@/components/modules/CorporateModule'
+import TeknisiModule     from '@/components/modules/TeknisiModule'
 import PlaceholderModule from '@/components/modules/PlaceholderModule'
 
 const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
@@ -33,7 +34,6 @@ const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
 }
 
 const PLACEHOLDERS: Record<string, { icon: string; description: string }> = {
-  teknisi:    { icon: '🔧', description: 'Kelola data teknisi lapangan, penugasan tiket, dan riwayat kerja.' },
   inventori:  { icon: '📦', description: 'Stok perangkat (ONU, kabel, splitter), barcode generator, dan tracking.' },
   monitoring: { icon: '📡', description: 'Status koneksi pelanggan secara real-time, notifikasi offline & sinyal lemah.' },
   wa:         { icon: '💬', description: 'WhatsApp gateway untuk broadcast invoice, notifikasi gangguan, dan CS.' },
@@ -61,6 +61,7 @@ export default function AppShell() {
       case 'laporan':    return <LaporanModule />
       case 'voucher':    return <VoucherModule />
       case 'corporate':  return <CorporateModule />
+      case 'teknisi':    return <TeknisiModule />
       default: {
         const ph = PLACEHOLDERS[page]
         if (ph) return <PlaceholderModule title={meta.title} icon={ph.icon} description={ph.description} />
