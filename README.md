@@ -17,26 +17,31 @@ Buka [http://localhost:3000](http://localhost:3000)
 ```
 fiberos/
 ├── app/
-│   ├── layout.tsx          # Root layout + metadata
-│   ├── page.tsx            # Entry point (login router)
-│   └── globals.css         # Design tokens & global styles
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
 │
 ├── lib/
-│   └── auth.tsx            # Auth context, roles, RBAC
+│   └── auth.tsx
 │
 ├── components/
-│   ├── LoginPage.tsx       # Login form (tanpa pilih role — auto dari akun)
-│   ├── AppShell.tsx        # Main layout router per halaman
+│   ├── LoginPage.tsx
+│   ├── AppShell.tsx
 │   ├── layout/
-│   │   ├── Sidebar.tsx     # Sidebar navigasi (menu sesuai role)
-│   │   └── Topbar.tsx      # Header atas
+│   │   ├── Sidebar.tsx
+│   │   └── Topbar.tsx
 │   └── modules/
-│       ├── DashboardModule.tsx    # Dashboard ringkasan
-│       ├── GangguanModule.tsx     # Tiket gangguan + deteksi offline/dBm
-│       ├── BillingModule.tsx      # Invoice + pilih metode bayar bebas
-│       ├── PelangganModule.tsx    # Manajemen pelanggan
-│       ├── PembayaranModule.tsx   # Riwayat & channel pembayaran
-│       └── PlaceholderModule.tsx  # Template untuk modul lain
+│       ├── DashboardModule.tsx
+│       ├── GangguanModule.tsx
+│       ├── BillingModule.tsx
+│       ├── PelangganModule.tsx
+│       ├── PembayaranModule.tsx
+│       ├── TransaksiModule.tsx
+│       ├── LaporanModule.tsx
+│       ├── VoucherModule.tsx
+│       ├── CorporateModule.tsx
+│       ├── TeknisiModule.tsx       ← baru
+│       └── PlaceholderModule.tsx
 ```
 
 ---
