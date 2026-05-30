@@ -17,14 +17,10 @@ const L = {
 
 const SUB_MENUS = [
   { id: 'pelanggan_baru',       icon: '👥', label: 'Laporan Pelanggan Baru',         color: L.brand,  bgColor: L.brandDim  },
-  { id: 'bhp_uso',              icon: '🏛️', label: 'Laporan BHP USO Fee ISP',        color: L.purple, bgColor: L.purpleDim },
-  { id: 'faktur',               icon: '🧾', label: 'Laporan Faktur',                 color: L.blue,   bgColor: L.blueDim   },
   { id: 'pembayaran',           icon: '💳', label: 'Laporan Pembayaran',             color: L.brand,  bgColor: L.brandDim  },
   { id: 'ringkasan_pembayaran', icon: '📊', label: 'Laporan Ringkasan Pembayaran',   color: L.teal,   bgColor: L.tealDim   },
   { id: 'laba_rugi',            icon: '📈', label: 'Laporan Laba Rugi',              color: L.blue,   bgColor: L.blueDim   },
   { id: 'ticket',               icon: '🎫', label: 'Laporan Ticket',                 color: L.amber,  bgColor: L.amberDim  },
-  { id: 'pembayaran_sales',     icon: '🧑‍💼', label: 'Lap Pembayaran Sales',           color: L.purple, bgColor: L.purpleDim },
-  { id: 'pembayaran_sales_bln', icon: '📅', label: 'Lap Pembayaran Sales Bulanan',   color: L.teal,   bgColor: L.tealDim   },
   { id: 'pembayaran_lokasi',    icon: '📍', label: 'Lap Pembayaran Lokasi',          color: L.blue,   bgColor: L.blueDim   },
   { id: 'pengeluaran_tahunan',  icon: '📉', label: 'Lap Pengeluaran Tahunan',        color: L.red,    bgColor: L.redDim    },
   { id: 'pengeluaran_bulanan',  icon: '📉', label: 'Lap Pengeluaran Bulanan',        color: L.amber,  bgColor: L.amberDim  },
@@ -127,41 +123,6 @@ function LapPelangganBaru() {
           ['2','Ibu Kartini',    'Home 10Mbps', 'Jl. Sudirman 11',  '03 Mei 2025','-'],
           ['3','CV Sumber Jaya', 'Bisnis 50Mbps','Jl. Ahmad Yani 8','05 Mei 2025','Budi S.'],
           ['4','Pak Hasan',      'Home 20Mbps', 'Jl. Diponegoro 3', '07 Mei 2025','-'],
-        ]}
-      />
-    </div>
-  )
-}
-
-function LapBHPUSO() {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <FilterBar />
-      <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '.82rem', color: '#1D4ED8' }}>
-        📋 Laporan BHP USO Fee ISP digunakan untuk pelaporan ke Kominfo. Pastikan data pendapatan sudah sesuai sebelum dicetak.
-      </div>
-      <LightTable
-        headers={['Periode','Total Pendapatan Bruto','BHP (0.5%)','USO (1.25%)','Total Kewajiban','Status']}
-        rows={[
-          ['Apr 2025',<span key="p" style={{fontFamily:'monospace',fontWeight:700}}>Rp 42.500.000</span>,<span key="b" style={{fontFamily:'monospace',color:L.red}}>Rp 212.500</span>,<span key="u" style={{fontFamily:'monospace',color:L.red}}>Rp 531.250</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.red}}>Rp 743.750</span>,<Badge key="s" color="green">Dilaporkan</Badge>],
-          ['Mar 2025',<span key="p" style={{fontFamily:'monospace',fontWeight:700}}>Rp 40.200.000</span>,<span key="b" style={{fontFamily:'monospace',color:L.red}}>Rp 201.000</span>,<span key="u" style={{fontFamily:'monospace',color:L.red}}>Rp 502.500</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.red}}>Rp 703.500</span>,<Badge key="s" color="green">Dilaporkan</Badge>],
-          ['Feb 2025',<span key="p" style={{fontFamily:'monospace',fontWeight:700}}>Rp 38.900.000</span>,<span key="b" style={{fontFamily:'monospace',color:L.red}}>Rp 194.500</span>,<span key="u" style={{fontFamily:'monospace',color:L.red}}>Rp 486.250</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.red}}>Rp 680.750</span>,<Badge key="s" color="amber">Draft</Badge>],
-        ]}
-      />
-    </div>
-  )
-}
-
-function LapFaktur() {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <FilterBar />
-      <LightTable
-        headers={['No. Faktur','Pelanggan','Paket','Nilai','PPN (11%)','Total','Tgl Faktur','Status']}
-        rows={[
-          ['INV-2405-001','Budi Santoso','Home 20Mbps',<span key="n" style={{fontFamily:'monospace'}}>Rp 162.162</span>,<span key="p" style={{fontFamily:'monospace'}}>Rp 17.838</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.brand}}>Rp 180.000</span>,'01 Mei 2025',<Badge key="s" color="green">Lunas</Badge>],
-          ['INV-2405-002','PT Maju Jaya','Bisnis 100M',<span key="n" style={{fontFamily:'monospace'}}>Rp 675.676</span>,<span key="p" style={{fontFamily:'monospace'}}>Rp 74.324</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.amber}}>Rp 750.000</span>,'01 Mei 2025',<Badge key="s" color="amber">Belum</Badge>],
-          ['INV-2405-003','Sari Dewi',   'Home 50Mbps',<span key="n" style={{fontFamily:'monospace'}}>Rp 225.225</span>,<span key="p" style={{fontFamily:'monospace'}}>Rp 24.775</span>,<span key="t" style={{fontFamily:'monospace',fontWeight:700,color:L.brand}}>Rp 250.000</span>,'01 Mei 2025',<Badge key="s" color="green">Lunas</Badge>],
         ]}
       />
     </div>
@@ -324,39 +285,6 @@ function LapTicket() {
   )
 }
 
-function LapPembayaranSales() {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <FilterBar />
-      <LightTable
-        headers={['Sales','Jumlah Pelanggan','Total Transaksi','Komisi (2%)','Sudah Dibayar','Status']}
-        rows={[
-          ['Budi Santoso (Sales)','24', <span key="t" style={{fontFamily:'monospace',fontWeight:700}}>Rp 4.320.000</span>, <span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 86.400</span>, <span key="d" style={{fontFamily:'monospace'}}>Rp 86.400</span>, <Badge key="s" color="green">Lunas</Badge>],
-          ['Sari Wulan (Sales)',  '11', <span key="t" style={{fontFamily:'monospace',fontWeight:700}}>Rp 1.980.000</span>, <span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 39.600</span>, <span key="d" style={{fontFamily:'monospace'}}>Rp 0</span>,      <Badge key="s" color="amber">Pending</Badge>],
-          ['Tanpa Sales',        '18', <span key="t" style={{fontFamily:'monospace',fontWeight:700}}>Rp 3.240.000</span>, <span key="k" style={{fontFamily:'monospace',color:L.subtle}}>—</span>,           <span key="d" style={{fontFamily:'monospace'}}>—</span>,           <Badge key="s" color="gray">N/A</Badge>],
-        ]}
-      />
-    </div>
-  )
-}
-
-function LapPembayaranSalesBulanan() {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-      <FilterBar />
-      <LightTable
-        headers={['Bulan','Sales','Pelanggan Baru','Total Transaksi','Komisi']}
-        rows={[
-          ['Mei 2025','Budi Santoso','3 pelanggan',<span key="t" style={{fontFamily:'monospace'}}>Rp 540.000</span>,<span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 10.800</span>],
-          ['Apr 2025','Budi Santoso','5 pelanggan',<span key="t" style={{fontFamily:'monospace'}}>Rp 900.000</span>,<span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 18.000</span>],
-          ['Apr 2025','Sari Wulan', '2 pelanggan',<span key="t" style={{fontFamily:'monospace'}}>Rp 360.000</span>,<span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 7.200</span>],
-          ['Mar 2025','Budi Santoso','4 pelanggan',<span key="t" style={{fontFamily:'monospace'}}>Rp 720.000</span>,<span key="k" style={{fontFamily:'monospace',color:L.purple}}>Rp 14.400</span>],
-        ]}
-      />
-    </div>
-  )
-}
-
 function LapPembayaranLokasi() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -436,14 +364,10 @@ function LapPengeluaranBulanan() {
 // ─── Sub-page map ───────────────────────────────────────
 const SUB_PAGES: Record<string, { component: React.FC; desc: string }> = {
   pelanggan_baru:       { component: LapPelangganBaru,         desc: 'Daftar pelanggan yang mendaftar periode ini' },
-  bhp_uso:              { component: LapBHPUSO,                desc: 'Perhitungan BHP USO untuk pelaporan ke Kominfo' },
-  faktur:               { component: LapFaktur,                desc: 'Rekap faktur dengan PPN per periode' },
   pembayaran:           { component: LapPembayaran,            desc: 'Rincian pembayaran per metode & pelanggan' },
   ringkasan_pembayaran: { component: LapRingkasanPembayaran,   desc: 'Grafik & ringkasan pembayaran bulanan' },
   laba_rugi:            { component: LapLabaRugi,              desc: 'Pemasukan vs pengeluaran dan laba bersih' },
   ticket:               { component: LapTicket,                desc: 'Statistik & riwayat tiket gangguan' },
-  pembayaran_sales:     { component: LapPembayaranSales,       desc: 'Komisi & performa sales per agen' },
-  pembayaran_sales_bln: { component: LapPembayaranSalesBulanan,desc: 'Rincian transaksi sales per bulan' },
   pembayaran_lokasi:    { component: LapPembayaranLokasi,      desc: 'Distribusi pembayaran per area/lokasi' },
   pengeluaran_tahunan:  { component: LapPengeluaranTahunan,    desc: 'Tren pengeluaran sepanjang tahun' },
   pengeluaran_bulanan:  { component: LapPengeluaranBulanan,    desc: 'Rincian pengeluaran bulan berjalan' },
