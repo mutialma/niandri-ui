@@ -12,7 +12,7 @@ import TransaksiModule   from '@/components/modules/TransaksiModule'
 import LaporanModule     from '@/components/modules/LaporanModule'
 import VoucherModule     from '@/components/modules/VoucherModule'
 import CorporateModule   from '@/components/modules/CorporateModule'
-import TeknisiModule     from '@/components/modules/TeknisiModule'
+import MonitoringModule  from '@/components/modules/MonitoringModule'
 import PlaceholderModule from '@/components/modules/PlaceholderModule'
 
 const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
@@ -27,15 +27,15 @@ const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
   corporate:  { title: 'Kelola Data Corporate',   breadcrumb: 'HR & Manajemen Karyawan' },
   teknisi:    { title: 'Manajemen Teknisi',       breadcrumb: 'Tim lapangan' },
   inventori:  { title: 'Inventori Perangkat',     breadcrumb: 'Stok & barcode' },
-  monitoring: { title: 'Monitoring Live',         breadcrumb: 'Status jaringan real-time' },
+  monitoring: { title: 'Monitoring & Peta Jaringan', breadcrumb: 'Data ODP, FAT, FDC, FDT, OLT dari KML' },
   wa:         { title: 'WhatsApp Gateway',        breadcrumb: 'Broadcast & CS' },
   mikrotik:   { title: 'Mikrotik Manager',        breadcrumb: 'Router & bandwidth' },
   pengaturan: { title: 'Pengaturan Sistem',       breadcrumb: 'Konfigurasi & preferensi' },
 }
 
 const PLACEHOLDERS: Record<string, { icon: string; description: string }> = {
+  teknisi:    { icon: '🔧', description: 'Kelola data teknisi lapangan, penugasan tiket, dan riwayat kerja.' },
   inventori:  { icon: '📦', description: 'Stok perangkat (ONU, kabel, splitter), barcode generator, dan tracking.' },
-  monitoring: { icon: '📡', description: 'Status koneksi pelanggan secara real-time, notifikasi offline & sinyal lemah.' },
   wa:         { icon: '💬', description: 'WhatsApp gateway untuk broadcast invoice, notifikasi gangguan, dan CS.' },
   mikrotik:   { icon: '⚙️', description: 'Manajemen router Mikrotik, bandwidth limiter, dan koneksi VPN tunnel.' },
   pengaturan: { icon: '🛠️', description: 'Konfigurasi sistem, paket harga, agen, nomor rekening, dan preferensi.' },
@@ -61,7 +61,7 @@ export default function AppShell() {
       case 'laporan':    return <LaporanModule />
       case 'voucher':    return <VoucherModule />
       case 'corporate':  return <CorporateModule />
-      case 'teknisi':    return <TeknisiModule />
+      case 'monitoring': return <MonitoringModule />
       default: {
         const ph = PLACEHOLDERS[page]
         if (ph) return <PlaceholderModule title={meta.title} icon={ph.icon} description={ph.description} />
