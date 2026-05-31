@@ -12,7 +12,7 @@ import TransaksiModule   from '@/components/modules/TransaksiModule'
 import LaporanModule     from '@/components/modules/LaporanModule'
 import VoucherModule     from '@/components/modules/VoucherModule'
 import CorporateModule   from '@/components/modules/CorporateModule'
-import MonitoringModule  from '@/components/modules/MonitoringModule'
+import MonitoringModule  from '@/components/modules/MonitoringModule2'
 import PlaceholderModule from '@/components/modules/PlaceholderModule'
 
 const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
