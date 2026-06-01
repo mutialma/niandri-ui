@@ -61,6 +61,7 @@ export default function AppShell() {
       case 'laporan':    return <LaporanModule />
       case 'voucher':    return <VoucherModule />
       case 'corporate':  return <CorporateModule />
+      case 'teknisi':    return <TeknisiModule />
       case 'monitoring': return <MonitoringModule />
       default: {
         const ph = PLACEHOLDERS[page]
