@@ -12,7 +12,8 @@ import TransaksiModule   from '@/components/modules/TransaksiModule'
 import LaporanModule     from '@/components/modules/LaporanModule'
 import VoucherModule     from '@/components/modules/VoucherModule'
 import CorporateModule   from '@/components/modules/CorporateModule'
-import MonitoringModule  from '@/components/modules/MonitoringModule2'
+import TeknisiModule     from '@/components/modules/TeknisiModule'
+import MonitoringModule  from '@/components/modules/MonitoringModule'
 import PlaceholderModule from '@/components/modules/PlaceholderModule'
 
 const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
@@ -27,14 +28,13 @@ const PAGE_META: Record<string, { title: string; breadcrumb: string }> = {
   corporate:  { title: 'Kelola Data Corporate',   breadcrumb: 'HR & Manajemen Karyawan' },
   teknisi:    { title: 'Manajemen Teknisi',       breadcrumb: 'Tim lapangan' },
   inventori:  { title: 'Inventori Perangkat',     breadcrumb: 'Stok & barcode' },
-  monitoring: { title: 'Monitoring & Peta Jaringan', breadcrumb: 'Data ODP, FAT, FDC, FDT, OLT dari KML' },
+  monitoring: { title: 'Monitoring Live',         breadcrumb: 'Status jaringan real-time' },
   wa:         { title: 'WhatsApp Gateway',        breadcrumb: 'Broadcast & CS' },
   mikrotik:   { title: 'Mikrotik Manager',        breadcrumb: 'Router & bandwidth' },
   pengaturan: { title: 'Pengaturan Sistem',       breadcrumb: 'Konfigurasi & preferensi' },
 }
 
 const PLACEHOLDERS: Record<string, { icon: string; description: string }> = {
-  teknisi:    { icon: '🔧', description: 'Kelola data teknisi lapangan, penugasan tiket, dan riwayat kerja.' },
   inventori:  { icon: '📦', description: 'Stok perangkat (ONU, kabel, splitter), barcode generator, dan tracking.' },
   wa:         { icon: '💬', description: 'WhatsApp gateway untuk broadcast invoice, notifikasi gangguan, dan CS.' },
   mikrotik:   { icon: '⚙️', description: 'Manajemen router Mikrotik, bandwidth limiter, dan koneksi VPN tunnel.' },
